@@ -1,0 +1,130 @@
+body {
+	/*align-content: center;*/
+	background: linear-gradient(#1e528e,#265889,#9da671);
+	background-attachment: fixed; /*edit*/
+	/* background-image: url(bird.jpg);
+	background-size:cover; */
+	/*display:flex; flex-direction:column; justify-content:center;
+    min-height:100vh;*/
+    font-family: 'Times New Roman', serif;
+    font-size: 20px;
+	
+}
+#round {
+	margin: auto;
+	text-align: center;
+  	border: 1px solid white;
+	border-radius: 25px;
+	background: linear-gradient(to bottom right, blue, #73AD21);
+	padding: 20px;
+	width: 1000px;
+	height: 200px; 
+	opacity: 1;
+}
+#round.show {
+	
+	transition: all .5s ease;
+	height: 0px;
+	width: 500px;
+	opacity: 0;
+}
+#round2 {
+	transition: all .5s ease;
+	height: 0px;
+	width: 500px;
+	opacity: 0;
+}
+#round2.show {
+	margin: auto;
+	text-align: center;
+  	border: 1px solid white;
+	border-radius: 25px;
+	background: linear-gradient(to bottom right, blue, #73AD21);
+	padding: 20px;
+	width: 1000px;
+	height: 200px; 
+	opacity: 1;
+
+
+}
+.whoop {
+	border: 1px solid white;
+	width: 500px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 25px 25px 0px 0px;
+}
+button {
+	width: 100%;
+	height: 100px;
+	border: 1px solid white;
+	border-radius: 25px;
+	background: green;
+	font-family: 'Times New Roman', serif;
+    font-size: 20px;
+
+
+}
+
+.stro {
+	align-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100px;
+	border: 1px solid white;
+	background: rgba(10, 200, 10, 0.2);
+	margin: 0px;
+	padding: 0px;
+	
+	
+
+}
+
+.stro:hover {
+	background: rgba(10, 200, 10, 0.5);
+	cursor: pointer;
+}
+label {
+	align-content: center;
+	text-align: center;
+	width: 200px;
+	height: 100px;
+	border: 1px solid white;
+	background: rgba(10, 200, 10, 0.2);
+	margin: 0px;
+	padding: 0px;
+	
+}
+input[type="file"] {
+    display: none;
+}
+.custom {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+#loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  opacity: 0;
+}
+#loader.show {
+	transition: all .5s ease;
+	opacity: 1;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

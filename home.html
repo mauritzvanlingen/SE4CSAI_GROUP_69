@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<center><div class="whoop">
+<h1><span style="color: #000080;">BuzzCrowTulip</strong></span></h1><h3>Bird Sound Identifier</h3></div>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+<div id="round">
+  <label for="myInput" class="stro">
+     Choose file
+</label><br>
+<input type="file" id="myInput"/><br>
+
+<audio style="width: 100%"id="sound"></audio><br>
+<button class="stro" id="myInput2">Evaluate</button><br>
+
+</div>
+<div id="loader"></div>
+<div id="round2">
+<h1>Results are in:</h1>
+Our AI model is: <b><p id="result1"></p></b> sure that a bird is in the uploaded wav file.
+
+</div>
+<script>
+
+function lota() {
+  
+  ran = (Math.random() * 100).toFixed(1)
+  
+  $( "p" ).text( ran + " % ");
+  setTimeout(function(){
+    $('#loader').hide()
+    $('#round').hide()
+    $('#round2').toggleClass('show')
+  }, 800);
+  //$('#round2').toggleClass('show');
+}
+$(document).ready(function(){
+  
+
+    $("#myInput2").click(function(){
+      
+      $('#round').toggleClass('show');
+
+      setTimeout(function(){
+        $('#loader').toggleClass('show')
+      }, 500);
+      setTimeout(function(){
+        lota()
+      }, 5000);      
+      
+    // File type is .mp3
+  });
+        
+
+    
+    $("#myInput").change(function(){
+      var sound = document.getElementById("sound");
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        sound.src = this.result;
+        sound.controls = true;
+        //sound.play();
+        };
+      reader.readAsDataURL(this.files[0]);
+      
+
+    var audio = document.getElementById("sr");
+    audio.src = file.value;
+    audios = document.getElementById("aud");
+    audios.style.display = "block";
+         //submit the form here
+      
+  });
+}); 
+
+
+// def load_pb(saved_model.pb):
+//     with tf.gfile.GFile(path_to_pb, "rb") as f:
+//         graph_def = tf.GraphDef()
+//         graph_def.ParseFromString(f.read())
+//     with tf.Graph().as_default() as graph:
+//         tf.import_graph_def(graph_def, name='')
+//         return graph
+
+// input = graph.get_tensor_by_name('input:0')
+// output = graph.get_tensor_by_name('output:0')
+// print(output)
+// print(graph)
+
+</script>
+
+</body>
+</html>
